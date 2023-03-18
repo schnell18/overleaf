@@ -60,7 +60,7 @@ jobs:
           context: "."
           file: "./server-ce/Dockerfile"
           build-args: |
-            "SHARELATEX_BASE_TAG=quay.io/schnell18/sharelatex-base:{{ steps.image_tags.outputs.IMAGE_TAGS }}"
+            "SHARELATEX_BASE_TAG=quay.io/schnell18/sharelatex-base:${{ steps.image_tags.outputs.IMAGE_TAGS }}"
           platforms: linux/amd64
           push: true
           tags: quay.io/schnell18/sharelatex:${{ steps.image_tags.outputs.IMAGE_TAGS }}
